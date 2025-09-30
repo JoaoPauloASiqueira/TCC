@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SeuSetup - Peças</title>
+    <link rel="stylesheet" href="pecas.css" />
+</head>
+<body>
+
+    <!-- Ícone do menu lateral (3 risquinhos) -->
+    <div class="menu-icon" onclick="openSidebar()">&#9776;</div>
+
+    <!-- Sidebar lateral -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+        <a href="login.html">Login</a>
+        <a href="montagem.html">Monte Agora</a>
+        <a href="pecas.html">Peças</a>
+        <a href="setup.html">Meus Setups</a>
+        <a href="assistencia.html">Assistência</a>
+        <a href="inicial.html">Menu inicial</a>
+    </div>
+
+    <main class="main-content">
+        <div class="banner">
+            <div class="pecas-container">
+                <h2>Selecione uma Categoria de Peça</h2>
+
+                <p class="pecas-description">
+                    Navegue pelas categorias abaixo para escolher as peças que farão parte do seu setup. Clique em cada uma para visualizar os modelos disponíveis. 
+                    Personalize seu PC conforme suas necessidades e orçamento!
+                </p>
+
+                <div class="peca-box">
+                    <img src="processador1.webp" alt="Imagem de Processador">
+                    <h3>Processadores</h3>
+                    <a href="processador.html">Ver Processadores</a>
+                </div>
+
+                <div class="peca-box">
+                    <img src="cooler1.webp" alt="Imagem de Cooler">
+                    <h3>Coolers para Processador</h3>
+                    <a href="cooler.html">Ver Coolers</a>
+                </div>
+
+                <div class="peca-box">
+                    <img src="placa1.png" alt="Imagem de Placa de Vídeo">
+                    <h3>Placas de Vídeo</h3>
+                    <a href="placa-de-video.html">Ver Placas de Vídeo</a>
+                </div>
+
+                <div class="peca-box">
+                    <img src="placamae1.webp" alt="Imagem de Placa-Mãe">
+                    <h3>Placas-mãe</h3>
+                    <a href="placa-mae.html">Ver Placas-mãe</a>
+                </div>
+
+                <div class="peca-box">
+                    <img src="memoria1.webp" alt="Imagem de Memória RAM">
+                    <h3>Memórias RAM</h3>
+                    <a href="memoria.html">Ver Memórias</a>
+                </div>
+
+                <div class="peca-box">
+                    <img src="armazenamento1.png" alt="Imagem de Armazenamento">
+                    <h3>Armazenamento</h3>
+                    <a href="armazenamento.html">Ver Armazenamento</a>
+                </div>
+
+                <div class="peca-box">
+                    <img src="gabinete1.webp" alt="Imagem de Gabinete">
+                    <h3>Gabinetes</h3>
+                    <a href="gabinete.html">Ver Gabinetes</a>
+                </div>
+
+                <div class="peca-box">
+                    <img src="fonte1.webp" alt="Imagem de Fonte de Alimentação">
+                    <h3>Fontes de Alimentação</h3>
+                    <a href="fonte.html">Ver Fontes</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 SeuSetup - Criado por João Paulo e Anthony</p>
+        <p>Telefone: 9999-99.. | Endereço: Rua dos Gamers, 123, Cidade Tech</p>
+        <p><a href="https://maps.google.com/?q=Rua+dos+Gamers,+123,+Cidade+Tech" target="_blank" rel="noopener">Veja no Maps</a></p>
+    </footer>
+
+    <script>
+        function openSidebar() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+        function closeSidebar() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+
+</body>
+</html>

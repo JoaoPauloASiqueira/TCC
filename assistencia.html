@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SeuSetup - Assistente Virtual</title>
+  <link rel="stylesheet" href="assistencia.css" />
+</head>
+<body>
+
+  <!-- Menu lateral -->
+  <div class="menu-icon" onclick="openSidebar()">&#9776;</div>
+
+  <nav id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+       <a href="login.html">Login</a>
+        <a href="montagem.html">Monte Agora</a>
+        <a href="pecas.html">Peças</a>
+        <a href="setup.html">Meus Setups</a>
+        <a href="assistencia.html">Assistência</a>
+        <a href="inicial.html">Menu inicial</a>
+  </nav>
+
+  <main class="main-content">
+    <section class="chat-container">
+      <h2>Assistente Virtual - SeuSetup 🤖</h2>
+
+      <div id="chatHistory" class="chat-history">
+        <div class="chat-message bot">
+          Olá! 👋 Eu sou a assistente do SeuSetup. Como posso ajudar você hoje?
+        </div>
+        <div class="options">
+          <button onclick="nextStep('montarPC', this.innerText)">Quero montar um PC</button>
+          <button onclick="nextStep('problemaPeca', this.innerText)">Tenho problema com uma peça</button>
+          <button onclick="nextStep('duvidas', this.innerText)">Tenho dúvidas sobre peças</button>
+          <button onclick="nextStep('outro', this.innerText)">Outra coisa</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function openSidebar() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+    function closeSidebar() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+
+    function nextStep(choice, userText) {
+      const chatHistory = document.getElementById('chatHistory');
+
+      // Remove as opções anteriores para não acumular
+      const prevOptions = chatHistory.querySelector('.options');
+      if (prevOptions) prevOptions.remove();
+
+      // Mensagens e opções que serão exibidas
+      let botMessage = '';
+      let newOptions = '';
+
+      switch(choice) {
+        case 'montarPC':
+          botMessage = 'Ótimo! Você pode começar <a href="index2.html" style="color:#ff4dd2;">clicando aqui para montar seu PC</a>. Que tipo de PC deseja montar?';
+          newOptions = `
+            <button onclick="nextStep('gamer', this.innerText)">PC Gamer</button>
+            <button onclick="nextStep('homeOffice', this.innerText)">PC Home Office</button>
+            <button onclick="nextStep('edicao', this.innerText)">PC para Edição de Vídeo</button>
+            <button onclick="nextStep('voltar', this.innerText)">Voltar</button>
+          `;
+          break;
+
+        case 'problemaPeca':
+          botMessage = 'Qual peça está com problema?';
+          newOptions = `
+            <button onclick="nextStep('processador', this.innerText)">Processador</button>
+            <button onclick="nextStep('placaVideo', this.innerText)">Placa de Vídeo</button>
+            <button onclick="nextStep('memoria', this.innerText)">Memória RAM</button>
+            <button onclick="nextStep('voltar', this.innerText)">Voltar</button>
+          `;
+          break;
+
+        case 'duvidas':
+          botMessage = 'Sobre qual peça você tem dúvidas?';
+          newOptions = `
+            <button onclick="nextStep('processador', this.innerText)">Processador</button>
+            <button onclick="nextStep('placaVideo', this.innerText)">Placa de Vídeo</button>
+            <button onclick="nextStep('memoria', this.innerText)">Memória RAM</button>
+            <button onclick="nextStep('voltar', this.innerText)">Voltar</button>
+          `;
+          break;
+
+        case 'outro':
+          botMessage = 'Você pode acessar nossa página de <a href="assistencia.html" style="color:#ff4dd2;">assistência</a> ou <a href="pecas.html" style="color:#ff4dd2;">peças</a> para mais ajuda.';
+          newOptions = `<button onclick="nextStep('voltar', this.innerText)">Voltar</button>`;
+          break;
+
+        case 'gamer':
+          botMessage = 'PC Gamer é uma ótima escolha! Quer ajuda para escolher as peças?';
+          newOptions = `
+            <button onclick="nextStep('simEscolherPecas', this.innerText)">Sim, por favor</button>
+            <button onclick="nextStep('naoMontarSo', this.innerText)">Não, só quero montar</button>
+            <button onclick="nextStep('voltar', this.innerText)">Voltar</button>
+          `;
+          break;
+
+        case 'homeOffice':
+          botMessage = 'PC para Home Office: estabilidade e custo-benefício são importantes. Quer sugestões?';
+          newOptions = `
+            <button onclick="nextStep('simEscolherPecas', this.innerText)">Sim, me ajude</button>
+            <button onclick="nextStep('naoMontarSo', this.innerText)">Não, obrigado</button>
+            <button onclick="nextStep('voltar', this.innerText)">Voltar</button>
+          `;
+          break;
+
+        case 'edicao':
+          botMessage = 'Edição de vídeo exige boa potência e memória. Quer montar com ajuda?';
+          newOptions = `
+            <button onclick="nextStep('simEscolherPecas', this.innerText)">Sim, vamos lá</button>
+            <button onclick="nextStep('naoMontarSo', this.innerText)">Não, só montar</button>
+            <button onclick="nextStep('voltar', this.innerText)">Voltar</button>
+          `;
+          break;
+
+        case 'processador':
+          botMessage = 'Processador é o cérebro do PC! Deseja ver opções ou ajuda para escolher?';
+          newOptions = `
+            <button onclick="location.href='processador.html'">Ver opções</button>
+            <button onclick="nextStep('ajudaEscolha', 'Preciso de ajuda para escolher')">Preciso de ajuda para escolher</button>
+            <button onclick="nextStep('voltar', 'Voltar')">Voltar</button>
+          `;
+          break;
+
+        case 'placaVideo':
+          botMessage = 'Placa de vídeo é essencial para jogos e edição. Quer ver opções?';
+          newOptions = `
+            <button onclick="location.href='placavideo.html'">Ver opções</button>
+            <button onclick="nextStep('ajudaEscolha', 'Preciso de ajuda para escolher')">Preciso de ajuda para escolher</button>
+            <button onclick="nextStep('voltar', 'Voltar')">Voltar</button>
+          `;
+          break;
+
+        case 'memoria':
+          botMessage = 'Memória RAM ajuda na velocidade e multitarefas. Quer ver opções?';
+          newOptions = `
+            <button onclick="location.href='memoria.html'">Ver opções</button>
+            <button onclick="nextStep('ajudaEscolha', 'Preciso de ajuda para escolher')">Preciso de ajuda para escolher</button>
+            <button onclick="nextStep('voltar', 'Voltar')">Voltar</button>
+          `;
+          break;
+
+        case 'ajudaEscolha':
+          botMessage = 'Recomendo começar pelo orçamento e uso que você precisa. Quer dicas detalhadas?';
+          newOptions = `
+            <button onclick="alert('Dicas em desenvolvimento, volte em breve!')">Sim</button>
+            <button onclick="nextStep('voltar', 'Voltar')">Voltar</button>
+          `;
+          break;
+
+        case 'simEscolherPecas':
+          botMessage = 'Qual seu orçamento aproximado?';
+          newOptions = `
+            <button onclick="alert('Funcionalidade em desenvolvimento!')">Até R$3000</button>
+            <button onclick="alert('Funcionalidade em desenvolvimento!')">R$3000 a R$6000</button>
+            <button onclick="alert('Funcionalidade em desenvolvimento!')">Mais de R$6000</button>
+            <button onclick="nextStep('voltar', 'Voltar')">Voltar</button>
+          `;
+          break;
+
+        case 'naoMontarSo':
+          botMessage = 'Tudo bem! Você pode começar a montar clicando em <a href="index2.html" style="color:#ff4dd2;">Montar Agora</a>.';
+          newOptions = `<button onclick="nextStep('voltar', 'Voltar')">Voltar</button>`;
+          break;
+
+        case 'voltar':
+          chatHistory.innerHTML += `
+            <div class="chat-message user">Voltar ao início</div>
+            <div class="chat-message bot">
+              Olá! 👋 Eu sou a assistente do SeuSetup. Como posso ajudar você hoje?
+            </div>
+            <div class="options">
+              <button onclick="nextStep('montarPC', 'Quero montar um PC')">Quero montar um PC</button>
+              <button onclick="nextStep('problemaPeca', 'Tenho problema com uma peça')">Tenho problema com uma peça</button>
+              <button onclick="nextStep('duvidas', 'Tenho dúvidas sobre peças')">Tenho dúvidas sobre peças</button>
+              <button onclick="nextStep('outro', 'Outra coisa')">Outra coisa</button>
+            </div>
+          `;
+          return;
+      }
+
+      // Adiciona mensagem do usuário e resposta do bot
+      chatHistory.innerHTML += `
+        <div class="chat-message user">${userText}</div>
+        <div class="chat-message bot">${botMessage}</div>
+        <div class="options">${newOptions}</div>
+      `;
+
+      chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+  </script>
+
+</body>
+</html>

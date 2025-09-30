@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background-color: #0e0e0e;
+    color: #f0f0f0;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* CABEÇALHO INICIAL (menu lateral só com os 3 risquinhos) */
+.menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    color: #ff4dd2;
+    user-select: none;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 2000;
+}
+
+.sidebar a {
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #ff4dd2;
+    display: block;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+    color: #ff80df;
+    background-color: rgba(255, 77, 210, 0.1);
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff4dd2;
+}
+
+/* BANNER (imagem de fundo paralax) */
+.banner {
+    background-image: url('wallpaper.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+    padding-top: 90px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* CONTAINER DE PEÇAS */
+.pecas-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1100px;
+    width: 90vw;
+    margin: 30px auto;
+    padding: 40px 50px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 77, 210, 0.3);
+    text-align: center;
+}
+
+.pecas-container h2 {
+    color: #ff4dd2;
+    font-size: 38px;
+    text-shadow: 0 0 20px rgba(255, 77, 210, 0.9);
+    margin-bottom: 10px;
+}
+
+.pecas-description {
+    color: #e0e0e0;
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* CADA BLOCO DE PEÇA */
+.peca-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(30, 30, 30, 0.95);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 77, 210, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.peca-box:hover {
+    background-color: rgba(255, 77, 210, 0.08);
+    transform: scale(1.02);
+}
+
+.peca-box img {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(255, 77, 210, 0.25);
+    flex-shrink: 0;
+}
+
+.peca-box h3 {
+    color: #ffffff;
+    font-size: 24px;
+    text-shadow: 0 0 10px rgba(255, 77, 210, 0.6);
+    flex-grow: 1;
+    text-align: left;
+    margin: 0 15px;
+    min-width: 150px;
+}
+
+.peca-box a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #ff4dd2;
+    border-radius: 8px;
+    color: #ff4dd2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    white-space: nowrap;
+}
+
+.peca-box a:hover {
+    background-color: #ff4dd2;
+    color: #0e0e0e;
+    box-shadow: 0 0 20px #ff4dd2;
+}
+
+/* FOOTER FINAL */
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 20px;
+    color: #ff4dd2;
+    font-size: 14px;
+    box-shadow: 0 -5px 10px rgba(255, 77, 210, 0.1);
+    margin-top: 50px;
+}
+
+footer a {
+    color: #ff80df;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background-color: #0e0e0e;
+    color: #f0f0f0;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-image: url('wallpaper.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Menu lateral (3 risquinhos) */
+.menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    color: #ff4dd2;
+    user-select: none;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    
+    border-bottom-right-radius: 10px;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 2000;
+    box-shadow: 3px 0 10px rgba(255, 77, 210, 0.3);
+}
+
+.sidebar a {
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #ff4dd2;
+    display: block;
+    transition: 0.3s;
+    font-size: 18px;
+    border-left: 3px solid transparent;
+}
+
+.sidebar a:hover {
+    color: #ff80df;
+    background-color: rgba(255, 77, 210, 0.1);
+    border-left: 3px solid #ff4dd2;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff4dd2;
+}
+
+/* Conteúdo principal do chat */
+.main-content {
+    margin-top: 70px;
+    padding: 0 20px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.chat-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 77, 210, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container h2 {
+    color: #ff4dd2;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(255, 77, 210, 0.7);
+    font-size: 32px;
+    user-select: none;
+}
+
+/* Histórico do chat */
+.chat-history {
+    max-height: 480px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Mensagens do chat */
+.chat-message {
+    padding: 15px 20px;
+    border-radius: 10px;
+    line-height: 1.6;
+    max-width: 85%;
+    word-wrap: break-word;
+}
+
+.chat-message.bot {
+    background-color: rgba(30, 30, 30, 0.95);
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 77, 210, 0.3);
+    border-left: 4px solid #ff4dd2;
+    align-self: flex-start;
+}
+
+.chat-message.user {
+    background-color: rgba(255, 77, 210, 0.2);
+    color: #ff4dd2;
+    border-right: 4px solid #ff4dd2;
+    align-self: flex-end;
+    text-align: right;
+}
+
+/* Links dentro das mensagens do bot */
+.chat-message.bot a {
+    color: #ff4dd2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.chat-message.bot a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #ff4dd2;
+}
+
+/* Botões de opções */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.options button {
+    background-color: #ff4dd2;
+    color: #0e0e0e;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.options button:hover {
+    background-color: #ff80df;
+    box-shadow: 0 0 15px #ff4dd2;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 15px 10px;
+    color: #ff4dd2;
+    font-size: 14px;
+    box-shadow: 0 -5px 10px rgba(255, 77, 210, 0.1);
+    user-select: none;
+}

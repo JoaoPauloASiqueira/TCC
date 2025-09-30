@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meu Título</title>
+  <link rel="stylesheet" href="inicial.css">
+</head>
+<body>
+
+
+  
+
+    <script>
+        function openSidebar() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Sidebar lateral -->
+    <div id="mySidebar" class="sidebar">
+        <span class="closebtn" onclick="closeSidebar()">×</span>
+        <a href="login.html">Login</a>
+        <a href="montagem.html">Monte Agora</a>
+        <a href="pecas.html">Peças</a>
+        <a href="setup.html">Meus Setups</a>
+        <a href="assistencia.html">Assistente</a>
+        <hr style="border-color:#ff4dd2;">
+       
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <span class="menu-icon" onclick="openSidebar()">☰</span>
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="montagem.html">Monte Agora</a>
+            <a href="pecas.html">Peças</a>
+            <a href="setup.html">Meus Setups</a>
+            <a href="assistencia.html">Assistente</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+
+        <!-- Banner com o H1 -->
+        <div class="banner">
+            <h1><a href="montagem.html">SEUSETUP</a></h1>
+        </div>
+
+        <!-- Texto descritivo -->
+        <div class="description">
+            <p>O <span style="color: #ff4dd2;"><strong>SeuSetup</strong></span> é uma plataforma para montar, visualizar e planejar o seu PC gamer de forma simples e direta. Aqui você escolhe cada componente (processador, placa-mãe, RAM, GPU, etc.), calcula o consumo de energia, verifica a compatibilidade entre as peças e salva ou compartilha o seu projeto.</p>
+
+            <p>O site também permite comparar setups, ver sugestões baseadas no seu orçamento e explorar os projetos de outros usuários. Se tiver dúvidas, use nossa área de assistência técnica com suporte especializado.</p>
+
+            <p>Quer montar seu setup? Clique em <a class="link-personalizado" href="montagem.html">Monte Agora</a> e comece.</p>
+        </div>
+
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2025 SeuSetup - Todos os direitos reservados ®</p>
+        <p>Telefone: (99) 9999-9999</p>
+        <p>Endereço: Rua Setup Ideal, 123 - São Paulo, SP</p>
+        <p><a href="https://www.google.com/maps?q=Rua+Setup+Ideal,+123+São+Paulo+SP" target="_blank">Ver no mapa</a></p>
+        <p>Desenvolvido por João Paulo e Anthony</p>
+    </footer>
+
+</body>
+</html>
+
+</body>
+</html>
